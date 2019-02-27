@@ -99,12 +99,13 @@
 			buildConfigurationList = 6D10DEAC221CAD6C00C46F75 /* Build configuration list for PBXNativeTarget "appdev-demo" */;
 			buildPhases = (
 				AC3F4ACCDD5D75D3ED90293C /* [CP] Check Pods Manifest.lock */,
-				6D10DEB3221DB6B800C46F75 /* Secrets/Fabric */,
+				6D10DEB3221DB6B800C46F75 /* Secrets */,
 				6D10DE96221CAD6800C46F75 /* Sources */,
 				6D10DE97221CAD6800C46F75 /* Frameworks */,
 				6D10DE98221CAD6800C46F75 /* Resources */,
 				3E202B656BD7EAEEC798292D /* [CP] Embed Pods Frameworks */,
 				6D10DEAF221DB29600C46F75 /* Swiftlint */,
+				6D36736C2226F5B8000F9917 /* Fabric */,
 			);
 			buildRules = (
 			);
@@ -203,7 +204,7 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		6D10DEB3221DB6B800C46F75 /* Secrets/Fabric */ = {
+		6D10DEB3221DB6B800C46F75 /* Secrets */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -213,7 +214,7 @@
 			inputPaths = (
 				"$(SRCROOT)/env-vars.sh",
 			);
-			name = Secrets/Fabric;
+			name = Secrets;
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -221,7 +222,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#check if env-vars.sh exists, because this file is not used on Bitrise CI\nif [ -f ./env-vars.sh ]\nthen\n    source ./env-vars.sh\nfi\n$PODS_ROOT/Sourcery/bin/sourcery --sources . --templates Sourcery/keys.stencil --output Secrets --args random=\"appdev\",apiURL=$API_URL,apiDevURL=$API_DEV_URL,fabricAPIKey=$FABRIC_API_KEY,fabricBuildSecret=$FABRIC_BUILD_SECRET\n\"${PODS_ROOT}/Fabric/run\" $FABRIC_API_KEY $FABRIC_BUILD_SECRET\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#check if env-vars.sh exists, because this file is not used on Bitrise CI\nif [ -f ./env-vars.sh ]\nthen\n    source ./env-vars.sh\nfi\n$PODS_ROOT/Sourcery/bin/sourcery --sources . --templates Sourcery/keys.stencil --output Secrets --args random=\"appdev\",apiURL=$API_URL,apiDevURL=$API_DEV_URL,fabricAPIKey=$FABRIC_API_KEY,fabricBuildSecret=$FABRIC_BUILD_SECRET\n";
+		};
+		6D36736C2226F5B8000F9917 /* Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/env-vars.sh",
+			);
+			name = Fabric;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n#check if env-vars.sh exists, because this file is not used on Bitrise CI\nif [ -f ./env-vars.sh ]\nthen\nsource ./env-vars.sh\nfi\n\"${PODS_ROOT}/Fabric/run\" $FABRIC_API_KEY $FABRIC_BUILD_SECRET\n";
 		};
 		AC3F4ACCDD5D75D3ED90293C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
