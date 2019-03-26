@@ -43,9 +43,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func setupFabric() {
         #if DEBUG
-        print("[Running Clicker in debug configuration]")
+        print("[Running app in debug configuration]")
         #else
-        print("[Running Clicker in release configuration]")
+        print("[Running app in release configuration]")
         Crashlytics.start(withAPIKey: Keys.fabricAPIKey.value)
         #endif
     }
