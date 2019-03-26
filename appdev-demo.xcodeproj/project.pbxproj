@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D03FA422247C71800191558 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D03FA412247C71800191558 /* Constants.swift */; };
 		6D10DE9E221CAD6800C46F75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10DE9D221CAD6800C46F75 /* AppDelegate.swift */; };
 		6D10DEA0221CAD6800C46F75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10DE9F221CAD6800C46F75 /* ViewController.swift */; };
 		6D10DEA5221CAD6C00C46F75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D10DEA4221CAD6C00C46F75 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		151798FE5404CF9E9CB7B4A7 /* Pods-appdev-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appdev-demo.release.xcconfig"; path = "Target Support Files/Pods-appdev-demo/Pods-appdev-demo.release.xcconfig"; sourceTree = "<group>"; };
+		6D03FA412247C71800191558 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6D10DE9A221CAD6800C46F75 /* appdev-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "appdev-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D10DE9D221CAD6800C46F75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D10DE9F221CAD6800C46F75 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				6D10DE9D221CAD6800C46F75 /* AppDelegate.swift */,
 				6D10DE9F221CAD6800C46F75 /* ViewController.swift */,
 				6D10DEC0221EE81700C46F75 /* Endpoints.swift */,
+				6D03FA412247C71800191558 /* Constants.swift */,
 				6D10DEBE221EDF0F00C46F75 /* keys.generated.swift */,
 				6D10DEA4221CAD6C00C46F75 /* Assets.xcassets */,
 				6D10DEA6221CAD6C00C46F75 /* LaunchScreen.storyboard */,
@@ -226,7 +229,7 @@
 		};
 		6D36736C2226F5B8000F9917 /* Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -272,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D03FA422247C71800191558 /* Constants.swift in Sources */,
 				6D10DEA0221CAD6800C46F75 /* ViewController.swift in Sources */,
 				6D10DEBF221EDF0F00C46F75 /* keys.generated.swift in Sources */,
 				6D10DEC1221EE81700C46F75 /* Endpoints.swift in Sources */,
